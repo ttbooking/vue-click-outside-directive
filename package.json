@@ -1,6 +1,9 @@
 {
   "name": "@ttbooking/vue-click-outside-directive",
   "version": "1.0.0",
-  "dependencies": {
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ttbooking/vue-click-outside-directive.git"
+  },
+  "author": "a.romashov"
 }
