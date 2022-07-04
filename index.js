@@ -1,7 +1,13 @@
 export default {
 	bind(el, binding, vnode) {
 		el.clickOutsideEvent = function (event) {
-			if (!(el === event.target || event.path.includes(el))) {
+
+			let isThisElement = el === event.target;
+			let isChildElement = event.path.includes(el);
+			let isClickedScrollY = event.offsetX > event.target.clientWidth;
+			let isClickedScrollX = event.offsetY > event.target.clientHeight;
+
+			if (!(isThisElement || isChildElement || isClickedScrollY || isClickedScrollX)) {
 				vnode.context[binding.expression](event);
 			}
 		};
