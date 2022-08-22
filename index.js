@@ -3,7 +3,7 @@ export default {
 		el.clickOutsideEvent = function (event) {
 
 			let isThisElement = el === event.target;
-			let isChildElement = event.path.includes(el);
+			let isChildElement = event.composedPath().includes(el);
 			let isClickedScrollY = event.offsetX > event.target.clientWidth;
 			let isClickedScrollX = event.offsetY > event.target.clientHeight;
 
