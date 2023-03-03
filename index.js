@@ -4,8 +4,8 @@ export default {
 
 			let isThisElement = el === event.target;
 			let isChildElement = event.composedPath().includes(el);
-			let isClickedScrollY = event.offsetX > event.target.clientWidth;
-			let isClickedScrollX = event.offsetY > event.target.clientHeight;
+			let isClickedScrollY = event.offsetX > (event.target.offsetWidth || Infinity);
+			let isClickedScrollX = event.offsetY > (event.target.offsetHeight || Infinity);
 
 			if (!(isThisElement || isChildElement || isClickedScrollY || isClickedScrollX)) {
 				vnode.context[binding.expression](event);
